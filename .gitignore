@@ -209,3 +209,9 @@ __marimo__/
 #ROOT
 
 *.root
+
+Imagens/
+*.png
+*.jpg
+*.jpeg
+*.pdf
