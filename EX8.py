@@ -73,7 +73,7 @@ plt.legend(fontsize=11)
 if not os.path.exists('Imagens'):
     os.makedirs('Imagens')
 
-output_file = 'Imagens/momento_z_comparacao.png'
+output_file = 'Imagens/EX8.png'
 plt.savefig(output_file, dpi=150)
 print(f"Sucesso! Gráfico guardado como: {output_file}")
 plt.show()

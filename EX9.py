@@ -10,7 +10,7 @@ TREE_NAME = 'tracksData'
 PION_PDG = 211
 
 # --- Configuração do Histograma ---
-NBINS = 400
+NBINS = 200
 PZ_MIN = -10
 PZ_MAX = 220  # Ajustar conforme a energia do feixe
 
@@ -70,7 +70,7 @@ plt.legend(fontsize=11)
 if not os.path.exists('Imagens'):
     os.makedirs('Imagens')
 
-output_file = 'Imagens/pz_pions_prim_sec.png'
+output_file = 'Imagens/EX9.png'
 plt.savefig(output_file, dpi=150)
 print(f"Gráfico guardado: {output_file}")
 print(f"Piões processados: {len(df_pions)}")
