@@ -33,6 +33,9 @@ h_secondary.SetLineColor(ROOT.kRed)
 h_primary.SetLineWidth(2)
 h_secondary.SetLineWidth(2)
 
+h_primary.SetMinimum(1)     # valor mínimo no eixo Y
+h_primary.SetMaximum(1e5)   # valor máximo no eixo Y
+
 h_primary.Draw("HIST")
 h_secondary.Draw("HIST SAME")
 
