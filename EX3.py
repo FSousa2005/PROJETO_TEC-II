@@ -9,13 +9,13 @@ if not f or f.IsZombie():
     print("Erro ao abrir o ficheiro!")
     exit()
 
-tree_hits = f.Get("Hits") 
+tree_hits = f.Get("tracksData") 
 
 # 2. Criar os histogramas para cada tipo de partícula
 # A variável na árvore está em keV (Edep_keV)
-h_muoes = ROOT.TH1F("h_muoes", "Energia Depositada por Particula;Energia (keV);Entradas", 200, 0, 0)
-h_pioes = ROOT.TH1F("h_pioes", "Energia Depositada por Particula;Energia (keV);Entradas", 200, 0, 0)
-h_outras = ROOT.TH1F("h_outras", "Energia Depositada por Particula;Energia (keV);Entradas", 200, 0,0)
+h_muoes = ROOT.TH1F("h_muoes", "Energia Depositada por Particula;Energia (keV);Entradas", 200, 0, 20000)
+h_pioes = ROOT.TH1F("h_pioes", "Energia Depositada por Particula;Energia (keV);Entradas", 200, 0, 20000)
+h_outras = ROOT.TH1F("h_outras", "Energia Depositada por Particula;Energia (keV);Entradas", 200, 0, 20000)
 
 # 3. Definir os "Cuts" (Filtros) com base no código PDG
 # Usamos abs() para apanhar tanto a partícula como a antipartícula (+ e -)
@@ -24,9 +24,9 @@ cut_pioes = "abs(particlePDG) == 211 || particlePDG == 111"
 cut_outras = "abs(particlePDG) != 13 && abs(particlePDG) != 211 && particlePDG != 111"
 
 # 4. Projetar os dados (Edep_keV) da árvore para os histogramas aplicando os filtros
-tree_hits.Draw("Edep_keV>>h_muoes", cut_muoes, "goff")
-tree_hits.Draw("Edep_keV>>h_pioes", cut_pioes, "goff")
-tree_hits.Draw("Edep_keV>>h_outras", cut_outras, "goff")
+tree_hits.Draw("EdepDet0_keV+EdepDet1_keV+EdepDet2_keV+EdepDet3_keV>>h_muoes", cut_muoes, "goff")
+tree_hits.Draw("EdepDet0_keV+EdepDet1_keV+EdepDet2_keV+EdepDet3_keV>>h_pioes", cut_pioes, "goff")
+tree_hits.Draw("EdepDet0_keV+EdepDet1_keV+EdepDet2_keV+EdepDet3_keV>>h_outras", cut_outras, "goff")
 
 # 5. Estilização
 h_muoes.SetLineColor(ROOT.kBlue)
@@ -62,4 +62,4 @@ canvas.Draw()
 canvas.SaveAs("energia_por_particula.png")
 
 print("Gráfico gerado! Verifica o ficheiro 'energia_por_particula.png'.")
-ROOT.gApplication.Run()
+input("Pressione Enter para fechar...")
