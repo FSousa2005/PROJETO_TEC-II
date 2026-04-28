@@ -3,7 +3,7 @@ import ROOT
 ## PARA MUDAR, AJEITAR UNIDADES
 
 # --- Configuração ---
-ROOT_FILE_NAME = "AmberTarget_Run_0.root" 
+ROOT_FILE_NAME = "ROOTFILES/AmberTarget_Run_0.root" 
 TREE_NAME = "Hits"
 
 # Definição das categorias e cores
@@ -67,7 +67,7 @@ for entry in tree:
 
 print("A gerar PDF...")
 
-output_pdf_name = "edep_muons_pions_sobrepostos.pdf"
+output_pdf_name = "ROOTFILES/edep_muons_pions_sobrepostos.pdf"
 canvases = [] 
 
 if histograms:
