@@ -15,6 +15,8 @@ hists = []
 # 3. Loop pelos 4 detetores
 for i in range(4):
     canvas.cd(i + 1) # Mudar para o quadrante correspondente
+
+    ROOT.gPad.SetLogz(1) 
     
     # Criar TH2F: nome, título, nBinsX, minX, maxX, nBinsY, minY, maxY
     h_name = f"h_det{i}"

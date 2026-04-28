@@ -8,7 +8,7 @@ TREE_NAME = 'tracksData'
 
 # --- Configuração do Histograma ---
 NBINS = 200
-X_MAX_KEV = 60000
+X_MAX_KEV = 20000
 
 print(f"A ler dados de {FILE_NAME}...")
 

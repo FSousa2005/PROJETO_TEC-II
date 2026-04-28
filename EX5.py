@@ -10,7 +10,7 @@ TREE_NAME = 'Hits'
 
 # Configuração do Histograma 2D
 NBINS = 150        # Mais bins para melhor definição do buraco
-LIMIT_CM = 12      # Janela de -12 a 12 cm para ver as bordas
+LIMIT_CM = 10      # Janela de -12 a 12 cm para ver as bordas
 
 print(f"A carregar hits de {FILE_NAME} para mapeamento 2D...")
 
