@@ -12,6 +12,7 @@ def ex1ploter(filename):
     f = ROOT.TFile.Open(filename)
 
     canvas = ROOT.TCanvas("c1", "Visualizacao", 800, 600)
+    canva2 = ROOT.TCanvas("c2", "Visualizacao", 800, 600)
     ROOT.gStyle.SetOptStat(0)
 
     legend = ROOT.TLegend(0.7, 0.7, 0.9, 0.9)
@@ -38,7 +39,7 @@ def ex1ploter(filename):
         else:
             h.Draw("HIST SAME")
 
-        h.SetMinimum(1)
+        h.SetMinimum(10)
         #h.SetMaximum(1e5)
 
         legend.AddEntry(h, name, "l")
@@ -47,9 +48,16 @@ def ex1ploter(filename):
 
     canvas.SetLogy()
     canvas.Update()
+    canva2.Update()
     # canvas.SaveAs("histograma_acumulado.png")
 
     input("Enter para sair")
+
+    # h.SetLineWidth(2)
+    # h.Draw("HIST SAME")
+    # canvas.Update()
+
+    # input("Enter para sair")
 
     return 0
 
